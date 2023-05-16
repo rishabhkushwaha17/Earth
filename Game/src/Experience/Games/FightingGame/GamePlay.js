@@ -9,17 +9,19 @@ import Time from "../../Utils/Time";
 import Character from "./Character";
 import { FightingGameSources } from "../../sources";
 import { ANIMATIONS } from "./gamesConstants";
+import GameManager from "./GameManager";
+import GameControls from "./PlayerControls";
+import JoyStick from "./Utils/JoyStickControlls";
+import KeyControls from "./Utils/KeyControlls";
 export default class GamePlay {
   constructor() {
-    this.animation = {};
-    this.animation.actions = {};
-    this.animation.mixer = {};
     this.experience = new Experience();
     this.debug = this.experience.debug;
     this.scenes = new Scenes("GamePlay");
     this.time = new Time();
     this.sceneloader = new Sceneloader();
     this.character = new Character();
+    this.gameManager = new GameManager();
   }
 
   addElements = () => {
@@ -35,52 +37,36 @@ export default class GamePlay {
     console.log(" this.model.animations", this.model.animations);
 
     this.update();
+
+    let isMobile = navigator.userAgent.match(
+      /(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i
+    );
+    if (isMobile) {
+      new JoyStick();
+    } else {
+      new KeyControls();
+    }
+    console.log("yes yse yes it is a mobile", isMobile);
   };
   fetchAnimations = () => {
     let animation = null;
     this.model = this.experience.resources.items["character"];
-    this.animation.mixer = new THREE.AnimationMixer(this.model);
+    this.gameManager.animation.mixer = new THREE.AnimationMixer(this.model);
     FightingGameSources.forEach((e) => {
       if (e.type == "fbx") {
         animation = this.experience.resources.items[e.name].animations;
         if (animation.length > 0) {
-          this.animation.actions[e.name] = this.animation.mixer.clipAction(
-            animation[0]
-          );
+          this.gameManager.animation.actions[e.name] =
+            this.gameManager.animation.mixer.clipAction(animation[0]);
           animation[0].name = e.name;
           this.model.animations.push(...animation);
         }
       }
     });
 
-    this.playAnimation();
-  };
-
-  playAnimation = () => {
-    // testing;
-
-    this.touchableObject = touchableobjectsarray;
-    // model.animations = animation;
-
-    this.animation.actions.current = this.animation.actions[ANIMATIONS.IDLE];
-    console.log(this.animation, "this.animationthis.animation");
-    this.animation.actions.current.play();
-    
-    this.animation.play = (name) => {
-      const newAction = this.animation.actions[name];
-      const oldAction = this.animation.actions.current;
-
-      newAction.reset();
-      newAction.play();
-      newAction.crossFadeFrom(oldAction, 1);
-      this.animation.actions.current = newAction;
-    };
-
+    // this.playAnimation();
     this.experience.scene.add(this.model);
-
-    setTimeout(() => {
-      this.animation.play(ANIMATIONS.JUMPKICK);
-    }, 5000);
+    new GameControls();
   };
 
   addFloor = () => {
@@ -93,7 +79,7 @@ export default class GamePlay {
   };
 
   update = () => {
-    this.animation.mixer.update(this.time.delta / 1000);
+    // this.animation.mixer.update(this.time.delta / 1000);
     window.requestAnimationFrame(this.update);
   };
 }

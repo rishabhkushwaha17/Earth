@@ -10,12 +10,18 @@ export default class GameManager {
     if (instance) {
       return instance;
     }
+
     instance = this;
     this.experience = new Experience();
     this.resources = new Resources(FightingGameSources);
     this.sceneLoader = new Sceneloader();
     this.experience.resources = this.resources;
     this.setScene();
+
+    this.animation = {};
+    this.animation.actions = {};
+    this.animation.mixer = {};
+
     this.resources.on("resourcesLoaded", () => {
       this.gamePlayClass = new GamePlay();
       this.sceneLoader.addWorld(this.gamePlayClass);

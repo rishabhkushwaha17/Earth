@@ -28,6 +28,11 @@ export let sources = [
     path: "/models/portal2/portal2.gltf",
   },
   {
+    name: "wrecked_house",
+    type: "gltfModel",
+    path: "/models/wrecked_house/scene2.gltf",
+  },
+  {
     name: "background",
     type: "cubeTexture",
     path: "/textures/environmentMap/MainBackgroundCubeTexture/",

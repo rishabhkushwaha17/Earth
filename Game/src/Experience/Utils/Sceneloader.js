@@ -5,6 +5,7 @@ import Island2 from "../MiniGames/Island2/Island";
 import Environment from "../World/Environment";
 import { touchableobjects, touchableobjectsarray } from "./Touchableconstants";
 import GamePlay from "../Games/FightingGame/GamePlay";
+import Island3 from "../MiniGames/Island3/Island3";
 export default class Sceneloader {
   constructor() {
     this.experience = new Experience();
@@ -16,35 +17,32 @@ export default class Sceneloader {
 
     switch (name) {
       case touchableobjects.CUBE1:
-        // let scene = new Island1();
-        // this.addWorld(scene);
         let gamePlayScene = new GamePlay();
         this.addWorld(gamePlayScene);
         break;
       case touchableobjects.CUBE2:
-        // new Island2();
         let scene2 = new Island2();
         this.addWorld(scene2);
         break;
-      case touchableobjects.BALCONY_CONE:
-        console.log("Balcony_Co");
+      case touchableobjects.CUBE3:
+        let scene3 = new Island3();
+        this.addWorld(scene3);
         break;
-      case touchableobjects.BOAT_CONE:
-        console.log("Floor_Cone");
-        let scene4 = this.experience.scenes["island1"];
-        console.log(this.experience.scenes["island1"]);
+      case touchableobjects.ISLAND3_HOUSECUBE02:
+      case touchableobjects.FLOOR_CONE:
+      case touchableobjects.CUBE001:
+        console.log("Earth Scene");
+        let scene4 = this.experience.scenes["Earth"];
+        console.log(this.experience.scenes["Earth"]);
         this.addWorld(null, scene4);
         break;
-      case touchableobjects.FLOOR_CONE:
+      // case touchableobjects.BALCONY_CONE:
+      //   console.log("Balcony_Co");
+      //   break;
+      case touchableobjects.BOAT_CONE:
         console.log("Floor_Cone");
-        let scene3 = this.experience.scenes["Earth"];
-        console.log(this.experience.scenes["Earth"]);
-        this.addWorld(null, scene3);
-        break;
-      case touchableobjects.CUBE001:
-        console.log("Cube001");
-        let scene5 = this.experience.scenes["Earth"];
-        console.log(this.experience.scenes["Earth"]);
+        let scene5 = this.experience.scenes["island1"];
+        console.log(this.experience.scenes["island1"]);
         this.addWorld(null, scene5);
         break;
       default:

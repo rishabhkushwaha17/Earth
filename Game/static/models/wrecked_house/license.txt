@@ -1,0 +1,11 @@
+Model Information:
+* title:	Home of an Exiled Seeress
+* source:	https://sketchfab.com/3d-models/home-of-an-exiled-seeress-00a13e9dd04c4c53856ee263ab54ed8f
+* author:	SilkevdSmissen (https://sketchfab.com/SilkevdSmissen)
+
+Model License:
+* license type:	CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions can not be distributed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Home of an Exiled Seeress" (https://sketchfab.com/3d-models/home-of-an-exiled-seeress-00a13e9dd04c4c53856ee263ab54ed8f) by SilkevdSmissen (https://sketchfab.com/SilkevdSmissen) licensed under CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)

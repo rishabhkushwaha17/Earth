@@ -5,7 +5,9 @@ import Island2 from "../MiniGames/Island2/Island";
 import Environment from "../World/Environment";
 import { touchableobjects, touchableobjectsarray } from "./Touchableconstants";
 import GamePlay from "../Games/FightingGame/GamePlay";
+import GameManager from "../Games/FightingGame/GameManager";
 import Island3 from "../MiniGames/Island3/Island3";
+import SaveThePlane from "../Games/EndLessRunner/SaveThePlane";
 export default class Sceneloader {
   constructor() {
     this.experience = new Experience();
@@ -17,6 +19,10 @@ export default class Sceneloader {
 
     switch (name) {
       case touchableobjects.CUBE1:
+        // let scene = new Island1();
+        // this.addWorld(scene);
+        new GameManager();
+
         let gamePlayScene = new GamePlay();
         this.addWorld(gamePlayScene);
         break;
@@ -35,6 +41,10 @@ export default class Sceneloader {
         let scene4 = this.experience.scenes["Earth"];
         console.log(this.experience.scenes["Earth"]);
         this.addWorld(null, scene4);
+        break;
+      case touchableobjects.ISLAND3_HOUSECUBE01:
+        let scene6 = new SaveThePlane();
+        this.addWorld(scene6);
         break;
       // case touchableobjects.BALCONY_CONE:
       //   console.log("Balcony_Co");

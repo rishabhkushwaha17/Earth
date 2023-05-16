@@ -15,10 +15,8 @@ import Sizes from "../../Utils/Sizes";
 import Character from "./Character";
 export default class GamePlay {
   constructor() {
-    // this.scene = new THREE.Scene();
     this.experience = new Experience();
     this.scenes = new Scenes("GamePlay");
-    // this.experience.scene = this.scene;
     this.time = new Time();
     this.sceneloader = new Sceneloader();
     this.character = new Character();

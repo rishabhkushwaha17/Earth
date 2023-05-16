@@ -14,8 +14,7 @@ export default class KeyControls extends GameControls {
       // Check the key code of the pressed key
       switch (event.keyCode) {
         case 37: // Left arrow key
-          console.log("left arraow is working");
-          this.playAnimation(ANIMATIONS.JUMP);
+          this.playAnimation(ANIMATIONS.JUMPKICK);
           break;
         case 38: // Up arrow key
           this.playAnimation(ANIMATIONS.HIT1);

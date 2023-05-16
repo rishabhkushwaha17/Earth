@@ -5,6 +5,7 @@ import Island2 from "../MiniGames/Island2/Island";
 import Environment from "../World/Environment";
 import { touchableobjects, touchableobjectsarray } from "./Touchableconstants";
 import GamePlay from "../Games/FightingGame/GamePlay";
+import GameManager from "../Games/FightingGame/GameManager";
 export default class Sceneloader {
   constructor() {
     this.experience = new Experience();
@@ -18,8 +19,8 @@ export default class Sceneloader {
       case touchableobjects.CUBE1:
         // let scene = new Island1();
         // this.addWorld(scene);
-        let gamePlayScene = new GamePlay();
-        this.addWorld(gamePlayScene);
+        new GameManager();
+
         break;
       case touchableobjects.CUBE2:
         // new Island2();

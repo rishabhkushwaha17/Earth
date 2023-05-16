@@ -9,7 +9,8 @@ export const getData = async () => {
       let Object = {};
       data.forEach((element) => {
         if ("FBX" == element.slice(element.length - 3)) {
-          Object.name = element.slice(0, element.length - 4);
+          Object.name = element.slice(6, element.length - 4);
+
           Object.type = "fbx";
           Object.path = "/models/FightingGame/Player/Animations/" + element;
           fileNames.push(Object);

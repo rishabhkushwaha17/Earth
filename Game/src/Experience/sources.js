@@ -1,10 +1,5 @@
 export let FightingGameSources = [
   {
-    name: "characterAnimation",
-    type: "fbx",
-    path: "/models/FightingGame/Player/Animations/Char1@Death.FBX",
-  },
-  {
     name: "character",
     type: "fbx",
     path: "/models/FightingGame/Player/Model/PlayerRig.FBX",

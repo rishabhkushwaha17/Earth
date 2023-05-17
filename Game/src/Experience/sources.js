@@ -21,12 +21,28 @@ export let FightingGameSources = [
   },
 ];
 
-// export let EndlessRunner = [
-//   {
-//     name: "aeroplaneAnimation",
-//     type: ""
-//   }
-// ]
+export let EndlessRunner = [
+  {
+    name: "star1",
+    type: "texture",
+    path: "/textures/EndlessRunner/star_05.png",
+  },
+  {
+    name: "background",
+    type: "texture",
+    path: "/textures/EndlessRunner/background.png",
+  },
+  {
+    name: "aeroplane",
+    type: "fbx",
+    path: "/models/EndlessRunner/aeroplane/GameArtPlane.fbx",
+  },
+  {
+    name: "aeroplaneFBX",
+    type: "fbx",
+    path: "/models/EndlessRunner/chernovan-nemesis/source/Chernovan-Nemesis.fbx",
+  },
+];
 
 export let sources = [
   {
@@ -48,11 +64,6 @@ export let sources = [
     name: "wrecked_house",
     type: "gltfModel",
     path: "/models/wrecked_house/scene2.gltf",
-  },
-  {
-    name: "aeroplane",
-    type: "gltfModel",
-    path: "/models/EndlessRunner/aeroplane/scene.gltf",
   },
   {
     name: "background",
